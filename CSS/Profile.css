@@ -1,0 +1,97 @@
+/* The left side of the demographics area on the profile */
+#left {
+  float:left;
+  margin: 1px 50px 10px 10px;
+  width:41%;
+}
+/* The right side of the demographics area on the profile */
+#right {
+  width:100%;
+  margin: 10px -5px 30px 0px;
+}
+/* Wrapper to hold the left and the right areas */
+#demographics {
+  border: 2px solid rgb(137, 136, 145);
+  margin-bottom: -2px;
+  font: 17px sans-serif;
+  background-color: white;
+  border-radius: 0px 10px 0px 0px;
+}
+#demographics p{
+  margin:8px;
+}
+
+/* From http://www.iconarchive.com/show/free-large-boss-icons-by-aha-soft.html */
+#profile_pic {
+  position: absolute;
+  margin: 20px 0px 0px 570px;
+  width: 100px;
+  height: 95px;
+}
+/* Wrapper for the To Do list and Allergy list */
+.container {
+  border: 2px solid rgb(137, 136, 145);
+  font: 17px sans-serif;
+  background-color: white;
+}
+ #allergies {
+   float:left;
+   margin-left: -322px;
+   position:static;
+   padding-right: 0px;
+   display:inline-block;
+ }
+ #allergies li {
+   font: 14px sans-serif;
+   list-style: none;
+   margin-left: 8px;
+ }
+
+ #to_do {
+   width:100%;
+   margin: 0px 0px 0px 280px;
+   border-left: 2px solid rgb(137, 136, 145);
+   padding: 5px 0px 0px 10px;
+ }
+ #to_do th {
+   font-weight: bold;
+   font-size: 15px;
+   text-align:left;
+ }
+#to_do td {
+  padding: 3px 0px;
+}
+#to_do table {
+  margin-bottom: 5px;
+  border-collapse: separate;
+  border-spacing: 20px 0;
+  font-size: 13px;
+  margin-left:-10px;
+  margin: 0px 0px 5px -10px;
+}
+/* Wrapper for the History area */
+.history {
+   border: 2px solid rgb(137, 136, 145);
+   margin-top:-2px;
+   font: 18px sans-serif;
+   background-color: white;
+   border-radius: 0px 0px 10px 10px;
+}
+/* Defines position of History labl */
+#history {
+   margin: 5px 0px 5px 20px;
+}
+/* Inpatient section */
+ #appointments {
+   float:left;
+   margin-right:20px;
+   font-size: 15px;
+   margin: 1px 0px 15px 20px;
+   width: 35%;
+ }
+/* Outpatient section */
+#admissions {
+  width:100%;
+  font-size: 15px;
+  margin-bottom: 5px;
+}

@@ -1,0 +1,83 @@
+/*Wrapper for the tabs with lists*/
+.lists {
+  border: 2px solid rgb(137, 136, 145);
+  border-radius: 0px 10px 10px 10px;
+  min-height:360px;
+  padding-bottom: 10px;
+  background-color: white;
+}
+/* Header above the genetics list */
+#tab4_header {
+  margin: 12px 15px -15px 15px;
+  background-color: rgb(6, 95, 139);
+  color: white;
+  padding: 5px 5px 5px 20px;
+  width: 91%;
+  border-radius: 6px 6px 0px 0px;
+  border: solid rgb(137, 136, 145);
+  border-width: 1px 1px 0px 1px;
+  font: 16px lato;
+  font-weight: 600;
+}
+/* The individual list items */
+.accordion {
+  background-color: rgb(241, 247, 247);
+  color: black;
+  cursor: pointer;
+  padding: 15px;
+  width: 90.3%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  border: 1px solid rgb(137, 136, 145);
+  font: 15px sans-serif;
+  margin: 0px 0px -1px 15px;
+}
+.accordion.active {
+  border-radius: 0px;
+  background-color: rgb(241, 247, 247);
+}
+.accordion:hover {
+  background-color: #d3e9f9;
+}
+/* Infobutton "i" image */
+.infobutton {
+  width:26px;
+  margin:-15px -5px -14.8px -2px;
+}
+/* The variant, AA change, and zygosity text in list button */
+.variant_text {
+  margin: -3.2% 0% 0% 25%;
+}
+.AA_text {
+  margin: -4.2% 0% 0% 35%;
+}
+.zygosity_text {
+  margin: -4.2% 0% 0% 71%;
+}
+/* The panel that slides out when the list button is clicked */
+.panel {
+  font-family: sans-serif;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+/* Text found within the panel */
+.report_text {
+  font-size: 16px;
+  padding-top: 2px;
+}
+.report_link {
+  padding-top: 8px;
+  font-family: sans-serif;
+  font-size: 13px;
+}
+/* If an empty list occurs, this will produce a line*/
+.empty-list {
+  border: solid rgb(137, 136, 145);
+  border-width: 2px 0px 0px 0px;
+  padding: 21px;
+  width: 88.5%;
+  margin: -5px 0px 0px 15px;
+}

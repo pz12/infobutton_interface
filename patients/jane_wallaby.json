@@ -1,0 +1,907 @@
+{
+  "resourceType": "Bundle",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "type": "allergy",
+        "category": "medication",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "256349002",
+              "display": "Rituximab"
+            }
+          ]
+        },
+        "id": "cf-1498598946308",
+        "clinicalStatus": "active",
+        "verificationStatus": "confirmed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "type": "allergy",
+        "category": "medication",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "67866001",
+              "display": "Aspirin"
+            }
+          ]
+        },
+        "id": "cf-1498598946308",
+        "verificationStatus": "confirmed",
+        "clinicalStatus": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "status": "proposed",
+        "start": "2017-11-14T12:48:01.000+00:00",
+        "end": "2017-11-14T12:48:01.000+00:00",
+        "description": "Blood Transfusion",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient",
+              "display": "Jane Oaks Wallaby"
+            },
+            "required": "required",
+            "status": "accepted"
+          },
+          {
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/ParticipationType",
+                    "code": "ATND"
+                  }
+                ]
+              }
+            ],
+            "actor": {
+              "reference": "Practitioner",
+              "display": "Dr Adam Careful"
+            },
+            "required": "required",
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/1",
+              "display": "South Wing, second floor"
+            },
+            "required": "required",
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "appointment",
+        "status": "proposed",
+        "start": "2018-01-06T12:48:01.000+00:00",
+        "end": "2018-01-06T12:48:01.000+00:00",
+        "description": "Mammogram",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/example",
+              "display": "Jane Oaks Wallaby"
+            },
+            "required": "required",
+            "status": "accepted"
+          },
+          {
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/ParticipationType",
+                    "code": "ATND"
+                  }
+                ]
+              }
+            ],
+            "actor": {
+              "reference": "Practitioner/example",
+              "display": "Dr Harris Daniel"
+            },
+            "required": "required",
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/1",
+              "display": "South Wing, second floor"
+            },
+            "required": "required",
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+	{
+	  "resource": {
+        "resourceType": "Condition",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2016-07-06T12:49:20.000+00:00"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Breast Cancer</div>"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254837009",
+              "display": "Malignant tumor of breast (disorder)"
+            }
+          ],
+          "text": "breast cancer"
+        },
+        "clinicalStatus": "active",
+        "verificationStatus": "confirmed",
+		"onsetDateTime": "2005-06-01"
+
+      }
+    },
+	{
+	  "resource": {
+        "resourceType": "Condition",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2016-07-06T12:49:20.000+00:00"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Sickle Cell Anemia</div>"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "127040003",
+              "display": "Hereditary hemoglobinopathy disorder homozygous for hemoglobin S (disorder)"
+            }
+          ],
+          "text": "Sickle Cell Anemia"
+        },
+        "clinicalStatus": "active",
+        "verificationStatus": "confirmed",
+        "onsetDateTime": "2005-06-01"
+
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2017-05-31T14:20:45.842-04:00"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Hypertension</div>"
+        },
+        "clinicalStatus": "inactive",
+        "verificationStatus": "confirmed",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "14657009",
+                "display": "Diagnosis"
+              }
+            ],
+            "text": "Diagnosis"
+          }
+        ],
+        "severity": {
+          "coding": [
+            {
+              "system": "http://snomed.info/ct",
+              "code": "255604002",
+              "display": "mild"
+            }
+          ],
+          "text": "Mild"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/ct",
+              "code": "38341003",
+              "display": "hypertension"
+            }
+          ],
+          "text": "hypertension"
+        },
+        "onsetDateTime": "2005-06-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2016-07-06T12:49:20.000+00:00"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Pulmonary emphysema</div>"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "87433001",
+              "display": "Pulmonary emphysema"
+            }
+          ],
+          "text": "Pulmonary emphysema"
+        },
+        "clinicalStatus": "inactive",
+        "verificationStatus": "confirmed",
+        "onsetDateTime": "2005-06-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "1",
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "period": {
+          "start": "2016-10-15"
+        },
+        "serviceProvider": {
+          "display": "University Hospital"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner",
+              "display": "Jannis Mumphrey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "1",
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "period": {
+          "start": "2016-01-22"
+        },
+        "serviceProvider": {
+          "display": "University Hospital"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner",
+              "display": "Jannis Mumphrey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "1",
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActCode",
+          "code": "IMP",
+          "display": "inpatient"
+        },
+        "period": {
+          "start": "2015-11-04"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner",
+              "display": "Joseph O'Reilly"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "1",
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActCode",
+          "code": "IMP",
+          "display": "inpatient"
+        },
+        "period": {
+          "start": "2015-04-19"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner",
+              "display": "Joseph O'Reilly"
+            }
+          }
+        ]
+      }
+    },
+	{
+      "resource": {
+        "resourceType": "MedicationDispense",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2016-07-06T12:49:48.000+00:00"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      Dispensed 90 tablets = 90 day supply of Simvastatin 40 MG Oral Tablet\n    </div>"
+        },
+        "status": "in-progress",
+        "authorizingPrescription": [
+          {
+            "reference": "MedicationOrder/SMART-MedicationOrder-164"
+          }
+        ],
+        "quantity": {
+          "value": 90,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+        },
+        "daysSupply": {
+          "value": 90,
+          "unit": "days",
+          "system": "http://unitsofmeasure.org",
+          "code": "d"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "70618",
+              "display": "Penicillin"
+            }
+          ],
+          "text": "Penicillin"
+        },
+        "whenHandedOver": "2009-03-23",
+        "id": "cf-1498598946308"
+      }
+    },
+	{
+      "resource": {
+        "resourceType": "MedicationDispense",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2016-07-06T12:49:48.000+00:00"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      Dispensed 90 tablets = 90 day supply of Simvastatin 40 MG Oral Tablet\n    </div>"
+        },
+        "status": "in-progress",
+        "authorizingPrescription": [
+          {
+            "reference": "MedicationOrder/SMART-MedicationOrder-164"
+          }
+        ],
+        "quantity": {
+          "value": 90,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+        },
+        "daysSupply": {
+          "value": 90,
+          "unit": "days",
+          "system": "http://unitsofmeasure.org",
+          "code": "d"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1045454",
+              "display": "eribulin mesylate 0.5 MG/ML"
+            }
+          ],
+          "text": "eribulin mesylate 0.5 MG/ML"
+        },
+        "whenHandedOver": "2009-03-23",
+        "id": "cf-1498598946308"
+      }
+    },
+	{
+      "resource": {
+        "resourceType": "MedicationDispense",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2016-07-06T12:49:48.000+00:00"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      Dispensed 90 tablets = 90 day supply of Simvastatin 40 MG Oral Tablet\n    </div>"
+        },
+        "status": "in-progress",
+        "authorizingPrescription": [
+          {
+            "reference": "MedicationOrder/SMART-MedicationOrder-164"
+          }
+        ],
+        "quantity": {
+          "value": 90,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+        },
+        "daysSupply": {
+          "value": 90,
+          "unit": "days",
+          "system": "http://unitsofmeasure.org",
+          "code": "d"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "200327",
+              "display": "capecitabine 150 MG Oral Tablet "
+            }
+          ],
+          "text": "capecitabine 150 MG Oral Tablet"
+        },
+        "whenHandedOver": "2009-03-23",
+        "id": "cf-1498598946308"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationDispense",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2016-07-06T12:48:01.000+00:00"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      Dispensed 180 tablets = 90 day supply of Memantine 10 MG Oral Tablet [Namenda]\n    </div>"
+        },
+        "status": "completed",
+        "authorizingPrescription": [
+          {
+            "reference": "MedicationOrder/SMART-MedicationOrder-140"
+          }
+        ],
+        "quantity": {
+          "value": 180,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+        },
+        "daysSupply": {
+          "value": 90,
+          "unit": "days",
+          "system": "http://unitsofmeasure.org",
+          "code": "d"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "404673",
+              "display": "Memantine 10 MG Oral Tablet [Namenda]"
+            }
+          ],
+          "text": "Memantine 10 MG Oral Tablet [Namenda]"
+        },
+        "whenHandedOver": "2008-08-13",
+        "id": "cf-1498598946308"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationDispense",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2016-07-06T12:48:01.000+00:00"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      Dispensed 200 tablets = 90 day supply of potassium citrate 10 MEQ Extended Release Tablet\n    </div>"
+        },
+        "status": "completed",
+        "authorizingPrescription": [
+          {
+            "reference": "MedicationOrder/SMART-MedicationOrder-143"
+          }
+        ],
+        "quantity": {
+          "value": 200,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+        },
+        "daysSupply": {
+          "value": 90,
+          "unit": "days",
+          "system": "http://unitsofmeasure.org",
+          "code": "d"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "199381",
+              "display": "potassium citrate 10 MEQ Extended Release Tablet"
+            }
+          ],
+          "text": "potassium citrate 10 MEQ Extended Release Tablet"
+        },
+        "whenHandedOver": "2009-01-03",
+        "id": "cf-1498598946308"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationDispense",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2016-07-06T12:49:48.000+00:00"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      Dispensed 90 tablets = 90 day supply of Simvastatin 40 MG Oral Tablet\n    </div>"
+        },
+        "status": "completed",
+        "authorizingPrescription": [
+          {
+            "reference": "MedicationOrder/SMART-MedicationOrder-164"
+          }
+        ],
+        "quantity": {
+          "value": 90,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+        },
+        "daysSupply": {
+          "value": 90,
+          "unit": "days",
+          "system": "http://unitsofmeasure.org",
+          "code": "d"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "198211",
+              "display": "Simvastatin 40 MG Oral Tablet"
+            }
+          ],
+          "text": "Simvastatin 40 MG Oral Tablet"
+        },
+        "whenHandedOver": "2009-03-23",
+        "id": "cf-1498598946308"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-genetics-1",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsGene",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.genenames.org",
+                  "code": "4827",
+                  "display": "HBB"
+                }
+              ]
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsDNASequenceVariantName",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.loinc.org",
+                  "code": "47998-0",
+                  "display": "NM_000518.4:c.19G>A"
+                }
+              ]
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/extension-observation-geneticsaminoacidchangename.html",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.loinc.org",
+                  "code": "48005-3",
+                  "display": "NM_000518.4:p.E7K"
+                }
+              ]
+            }
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "51969-4",
+              "display": "Genetic analysis report"
+            }
+          ]
+        },
+        "issued": "2013-04-03T15:30:10+01:00",
+        "performer": [
+          {
+            "reference": "Practitioner/example",
+            "display": "Molecular Diagnostics Laboratory"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "10828004",
+              "display": "Positive"
+            }
+          ]
+        },
+        "specimen": {
+          "reference": "Specimen/genetics-example1-somatic",
+          "display": "Molecular Specimen ID: MLD45-Z4-1234"
+        },
+        "comment": "Predicted to be a carrier of hemoglobin C disease",
+        "related": [
+          {
+            "type": "derived-from",
+            "target": {
+              "reference": "HBB.pdf"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-genetics-1",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsGene",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.genenames.org",
+                  "code": "1100",
+                  "display": "BRCA1"
+                }
+              ]
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsDNASequenceVariantName",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.loinc.org",
+                  "code": "47998-0",
+                  "display": "NM_007294.3:c.68_69delAG"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://www.hl7.org/fhir/extension-observation-geneticsallelicstate.html",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.loinc.org",
+                  "code": "53034-5",
+                  "display": "Heterozygous"
+                }
+              ]
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/extension-observation-geneticsaminoacidchangename.html",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.loinc.org",
+                  "code": "48005-3",
+                  "display": "NM_007294.3:p.Glu23fsX17"
+                }
+              ]
+            }
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "51969-4",
+              "display": "Genetic analysis report"
+            }
+          ]
+        },
+        "issued": "2013-04-03T15:30:10+01:00",
+        "performer": [
+          {
+            "reference": "Practitioner/example",
+            "display": "Molecular Diagnostics Laboratory"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "10828004",
+              "display": "Positive"
+            }
+          ]
+        },
+        "specimen": {
+          "reference": "Specimen/genetics-example1-somatic",
+          "display": "Molecular Specimen ID: MLD45-Z4-1234"
+        },
+        "comment": "Associated with an increased risk for the Hereditary Breast and Ovarian Cancer Syndrome",
+        "related": [
+          {
+            "type": "derived-from",
+            "target": {
+              "reference": "BRCA1.pdf"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "102-11-887",
+        "active": true,
+        "name": [
+          {
+            "use": "official",
+            "family": "Wallaby",
+            "given": [
+              "Jane",
+              "Oaks"
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "888-887-6812",
+            "use": "home",
+            "rank": 1
+          },
+          {
+            "system": "phone",
+            "value": "888-881-4812",
+            "use": "mobile",
+            "rank": 2
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1954-07-22",
+        "deceasedBoolean": false,
+        "address": [
+          {
+            "use": "home",
+            "type": "both",
+            "text": "534 Erewhon St PeasantVille, Rainbow, Vic  3999",
+            "line": [
+              "2887 S 200 E"
+            ],
+            "city": "Hale",
+            "district": "Rainbow",
+            "state": "UT",
+            "postalCode": "34822",
+            "period": {
+              "start": "1974-12-25"
+            }
+          }
+        ],
+        "contact": [
+          {
+            "relationship": [
+              {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v2/0131",
+                    "code": "N"
+                  }
+                ]
+              }
+            ],
+            "name": {
+              "family": "Wallaby",
+              "given": [
+                "Frank"
+              ]
+            },
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "888-881-6873"
+              }
+            ],
+            "address": {
+              "use": "home",
+              "type": "both",
+              "line": [
+                "534 Erewhon St"
+              ],
+              "city": "PleasantVille",
+              "district": "Rainbow",
+              "state": "Vic",
+              "postalCode": "3999",
+              "period": {
+                "start": "1974-12-25"
+              }
+            },
+            "gender": "male",
+            "period": {
+              "start": "2012"
+            }
+          }
+        ],
+        "communication": [
+          {
+            "language": {
+              "coding": [
+                {
+                  "system": "urn:ietf:bcp:47",
+                  "code": "en-US",
+                  "display": "English"
+                }
+              ]
+            }
+          }
+        ],
+        "managingOrganization": {
+          "reference": "U of U Hospital"
+        }
+      }
+    }
+  ]
+}

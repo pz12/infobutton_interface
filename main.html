@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<div class="all_wrap">
+  <html>
+
+  <head>
+    <title>Patient Information</title>
+    <link rel="stylesheet" type="text/css" href="CSS/Master.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script type='text/javascript' src='animations.js'></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <h3>University Hospital</h3>
+    </div>
+    <div class="buffer"></div>
+    <div>
+      <div class="patient-header-wrapper">
+        <p class="patient_header"><span id="patient_name"><b id="last_name1"></b><b>, </b>
+          <b id="first_name1"></b></span><span id="patient_id1"></span>
+          <span id="date"></span>
+        </p>
+      </div>
+      <div id="dd" class="dropdown-wrapper">
+        <div id="dd_header">
+        <span style="margin-left:8px;">Patient Selection</span>
+        <span class="arrow-down"></span>
+      </div>
+        <ul id="dd_list" class="dropdown"></ul>
+      </div>
+    </div>
+    <hr>
+
+    <div class="tabs">
+      <ul class="tab-links">
+        <li id="profile" class="active"><a href="#tab1">Profile</a></li>
+        <li><a href="#tab2">Problems</a></li>
+        <li><a href="#tab3">Medications</a></li>
+        <li><a href="#tab4">Results</a></li>
+      </ul>
+
+    <div class="tab-content">
+      <div id="tab1" class="tab active">
+        <div><img id="profile_pic"/></div>
+        <div id="demographics">
+          <div id="left">
+            <p><b>Name: </b><span id="first_name2"></span> <span id="middle_name"></span> <span id="last_name2"></span></p>
+            <p><b>Patient ID: </b><span id="patient_id2"></span></p>
+            <p><b>Address: </b><span id="address_line"></span></p>
+            <p style="text-indent:4.7em;"><span id="address_city"></span>, <span id="address_state"></span> <span id="address_zip"></span></p>
+            <span id="contact"></span>
+          </div>
+          <div id="right">
+            <p><b>DOB: </b><span id="DOB"></span></p>
+            <p><b>Gender: </b><span id="gender"></span></p>
+            <p><b>Language: </b><span id="language"></span></p>
+            <p><b>Contact: </b><span id="emergency_name" </p>
+            <p style="text-indent:4.3em;" id="emergency_phone"></p>
+          </div>
+        </div>
+        <div class="container">
+          <div id="allergies">
+            <p style="margin: 5px 0px;"><b style="font-size:18px;">Allergies</b> <span style="font-size:13px;">&nbsp&nbspLast updated on <span id="allergy_date"></span></span></p>
+            <div id="allergy_list"></div>
+          </div>
+          <div id="to_do">
+            <span><b style="font-size:18px;margin-left:-45px">To Do List </b><span style="font-size:13px;">&nbsp&nbspLast updated on <span id="list_date"></span></span>
+            </span>
+            <table id="to_do_table"></table>
+          </div>
+        </div>
+        <div class="history">
+          <p id="history"><b>History</b><span style="font-size:13px;">&nbsp&nbspLast updated on <span id="history_date"></span></span></p>
+          <div class="contain_history">
+            <div id="appointments">
+              <p><b>Inpatient</b></br></p>
+              <span id="inpatient"></span>
+            </div>
+            <div id="admissions">
+              <p><b>Outpatient</b></br></p>
+              <span id="outpatient"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab2" class="tab">
+        <div class="lists" id="problems">
+          <div class="sub-tabs">
+            <ul class="sub-tab-links">
+              <li id="activeTabP" class="active"><a href="#active-p">Active</a></li>
+              <li><a href="#inactive-p">Inactive</a></li>
+            </ul>
+            <div class="sub-tab-content">
+              <div id="active-p" class="tab active"></div>
+              <div id="inactive-p" class="tab"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab3" class="tab">
+        <div class="lists" id="problems">
+          <div class="sub-tabs">
+            <ul class="sub-tab-links">
+              <li id="activeTabM" class="active"><a href="#active-m">Active</a></li>
+              <li><a href="#inactive-m">Inactive</a></li>
+            </ul>
+            <div class="sub-tab-content">
+              <div id="active-m" class="tab active"></div>
+              <div id="inactive-m" class="tab"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div id="tab4" class="tab">
+          <div class="lists">
+            <div id="tab4_header"><span style="margin-left:-5px;">Gene </span><span style="margin-left:110px;">Variant</span><span style="margin-left:110px;">AA Change</span><span style="margin-left:84px;">Zygosity</span></div>
+            <div id="gene_list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <p>University Hospital</p>
+      <p>12338 N Health Ave</p>
+      <p>PleasantVille, UT 34818</p>
+      <p>888-123-1234</p>
+    </div>
+
+
+  </body>
+
+  </html>
+</div>

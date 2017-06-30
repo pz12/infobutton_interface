@@ -1,0 +1,123 @@
+/**********************************/
+/*--- Overarching Tabs Section ---*/
+/**********************************/
+.tabs {
+  width: 100%;
+  display: inline-block;
+}
+/* Creates distance between tab and contents */
+.tab-links:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+/* Makes List horizontal */
+.tab-links li {
+  margin: 0px 3px;
+  float: left;
+  list-style: none;
+}
+.tabs ul {
+  margin: 4px;
+  padding: 0px;
+  margin-bottom: 8px;
+}
+/* Formats the links and tabs */
+.tab-links a {
+  padding: 9px 30px;
+  border-radius: 6px 6px 0px 0px;
+  border: solid rgb(137, 136, 145);
+  border-width: 1px 1px 0px 1px;
+  background: #95d1fa;
+  font: 16px lato;
+  font-weight: 600;
+  color: rgb(71, 70, 71);
+  transition: all linear 0.15s;
+}
+/* Formats tabs when mouse is hovering */
+.tab-links a:hover {
+  background: rgb(241, 247, 247);
+}
+/* Changes format of "active" tab */
+li.active a, li.active a:hover {
+  background-color: rgb(6, 95, 139);
+  color: white;
+  border: solid rgb(137, 136, 145);
+  border-width: 1px 1px 0px 1px;
+}
+
+/* Modifies anything within the contents of tab */
+.tab-content {
+  padding: bottom;
+  background: #fff;
+  font-size: 20px;
+  margin: 7px;
+  background-color: rgb(240, 241, 246);
+}
+/* Will only show the contents of the active tab */
+.tab {
+  display: none;
+}
+.tab.active {
+  display: block;
+}
+.tab-content p {
+  margin: 0px;
+}
+
+/**************************/
+/*--- Sub Tabs Section ---*/
+/**************************/
+
+.sub-tabs {
+  width: 100%;
+  display: inline-block;
+  margin: 12px 0px -25px 8px;
+}
+
+/* Creates distance between tab and contents */
+.sub-tab-links:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+/* Makes List horizontal */
+.sub-tab-links li {
+  margin: 0px 3px;
+  float: left;
+  list-style: none;
+}
+.sub-tabs ul {
+  margin: 4px 4px 8px 4px;
+  padding: 0px;
+}
+/* Formats the links and tabs */
+.sub-tab-links a {
+  padding: 5px 25px;
+  border-radius: 6px 6px 0px 0px;
+  border: solid rgb(137, 136, 145);
+  border-width: 1px 1px 0px 1px;
+  background: #95d1fa;
+  font: 16px lato;
+  font-weight: 600;
+  color: rgb(71, 70, 71);
+  transition: all linear 0.15s;
+}
+/* Formats tabs when mouse is hovering */
+.sub-tab-links a:hover {
+  background: rgb(241, 247, 247);
+  text-decoration: none;
+}
+/* Modifies anything within the contents of tab */
+.sub-tab-content {
+  padding: bottom;
+  font-size: 20px;
+  margin-left: -8px;
+}
+/* Will only show the contents of the active tab */
+.sub-tab {
+  display: none;
+}
+.sub-tab.active {
+  display: block;
+}

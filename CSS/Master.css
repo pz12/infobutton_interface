@@ -1,0 +1,6 @@
+/* Navigates html to all of the css files */
+@import url(WebPage.css);
+@import url(Dropdown.css);
+@import url(Lists.css);
+@import url(Profile.css);
+@import url(Tabs.css);

@@ -1,0 +1,1101 @@
+{
+  "resourceType": "Bundle",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "type": "allergy",
+        "id": "1",
+        "category": "food",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "256349002",
+              "display": "Peanuts"
+            }
+          ]
+        },
+        "clinicalStatus": "active",
+        "verificationStatus": "confirmed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "type": "allergy",
+        "id": "3",
+        "category": "food",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "226760005",
+              "display": "Dairy"
+            }
+          ]
+        },
+        "clinicalStatus": "active",
+        "verificationStatus": "confirmed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "type": "allergy",
+        "id": "2",
+        "category": "medication",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "67866001",
+              "display": "Insulin"
+            }
+          ]
+        },
+        "clinicalStatus": "active",
+        "verificationStatus": "confirmed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "appointment",
+        "status": "booked",
+        "start": "2017-11-14T12:48:01.000+00:00",
+        "end": "2017-11-14T12:48:01.000+00:00",
+        "description": "Colonoscopy",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient",
+              "display": "Peter James Chalmers"
+            },
+            "required": "required",
+            "status": "accepted"
+          },
+          {
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/ParticipationType",
+                    "code": "ATND"
+                  }
+                ]
+              }
+            ],
+            "actor": {
+              "reference": "Practitioner",
+              "display": "Dr Adam Careful"
+            },
+            "required": "required",
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/1",
+              "display": "South Wing, second floor"
+            },
+            "required": "required",
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "appointment",
+        "status": "booked",
+        "start": "2018-01-06T12:48:01.000+00:00",
+        "end": "2018-01-06T12:48:01.000+00:00",
+        "description": "Endometrial Biopsy",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/example",
+              "display": "Peter James Chalmers"
+            },
+            "required": "required",
+            "status": "accepted"
+          },
+          {
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v3/ParticipationType",
+                    "code": "ATND"
+                  }
+                ]
+              }
+            ],
+            "actor": {
+              "reference": "Practitioner/example",
+              "display": "Dr Harris Daniel"
+            },
+            "required": "required",
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/1",
+              "display": "South Wing, second floor"
+            },
+            "required": "required",
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+	    {
+      "resource": {
+        "resourceType": "Condition",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2016-07-06T12:54:23.000+00:00"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Heart disease</div>"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "418818005",
+              "display": "Brugada Syndrome"
+            }
+          ],
+          "text": "Brugada Syndrome"
+        },
+        "clinicalStatus": "active",
+        "verificationStatus": "confirmed",
+        "onsetDateTime": "2006-03-15",
+        "id": "cf-1498599834052"
+      }
+    },
+	    {
+      "resource": {
+        "resourceType": "Condition",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2016-07-06T12:54:23.000+00:00"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Heart disease</div>"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "424263008",
+              "display": "Adenoma of Liver (Disorder)"
+            }
+          ],
+          "text": "Hepatic Adenoma"
+        },
+        "clinicalStatus": "active",
+        "verificationStatus": "confirmed",
+        "onsetDateTime": "2006-03-15",
+        "id": "cf-1498599834052"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2016-07-06T12:54:23.000+00:00"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Heart disease</div>"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "395704004",
+              "display": "Heart disease"
+            }
+          ],
+          "text": "Heart disease"
+        },
+        "clinicalStatus": "inactive",
+        "verificationStatus": "confirmed",
+        "onsetDateTime": "2006-03-15",
+        "id": "cf-1498599834052"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2017-01-20T10:49:33.064-05:00",
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/Condition"
+          ]
+        },
+        "clinicalStatus": "inactive",
+        "verificationStatus": "confirmed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Type 2 Diabetes Mellitus"
+            }
+          ],
+          "text": "Type 2 Diabetes Mellitus"
+        },
+        "onsetDateTime": "2012-05-24",
+        "note": {
+          "text": "A1C levels of 7.2% on two seperate tests."
+        },
+        "id": "cf-1498599834052"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2017-01-20T10:49:33.064-05:00",
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/Condition"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div>Type 1 diabetes mellitus</div></div>"
+        },
+        "clinicalStatus": "active",
+        "verificationStatus": "confirmed",
+        "severity": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "255604002",
+              "display": "Mild"
+            }
+          ],
+          "text": "Mild"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "46635009",
+              "display": "Type 1 diabetes mellitus"
+            }
+          ],
+          "text": "Type 1 diabetes mellitus"
+        },
+        "onsetDateTime": "2005-06-01",
+        "id": "cf-1498599834052"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "1",
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActCode",
+          "code": "IMP",
+          "display": "inpatient"
+        },
+        "subject": {
+          "display": "Peter James Chalmers",
+          "reference": "000-12-871"
+        },
+        "period": {
+          "start": "2016-06-08"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner",
+              "display": "Carl Duncun"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "1",
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActCode",
+          "code": "IMP",
+          "display": "inpatient"
+        },
+        "subject": {
+          "display": "Peter James Chalmers",
+          "reference": "000-12-871"
+        },
+        "period": {
+          "start": "2017-01-04"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner",
+              "display": "Carl Duncun"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "1",
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "display": "Peter James Chalmers",
+          "reference": "000-12-871"
+        },
+        "period": {
+          "start": "2014-05-28"
+        },
+        "serviceProvider": {
+          "display": "University Hospital"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner",
+              "display": "George Bailey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "1",
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "display": "Peter James Chalmers",
+          "reference": "000-12-871"
+        },
+        "period": {
+          "start": "2016-10-15"
+        },
+        "serviceProvider": {
+          "display": "University Hospital"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner",
+              "display": "Dorothy Ganneth"
+            }
+          }
+        ]
+      }
+    },
+	{
+      "resource": {
+        "resourceType": "MedicationDispense",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2016-07-06T12:48:01.000+00:00"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      Hydrochlorothiazide 50 MG Oral Tablet (rxnorm: 197770)\n    </div>"
+        },
+        "status": "in-progress",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1312398",
+              "display": "regorafenib 40 MG"
+            }
+          ],
+          "text": "regorafenib 40 MG"
+        },
+        "dosageInstruction": [
+          {
+            "text": "1 daily",
+            "doseQuantity": {
+              "value": 1,
+              "unit": "{tablet}",
+              "system": "http://unitsofmeasure.org",
+              "code": "{tablet}"
+            }
+          }
+        ],
+        "quantity": {
+          "value": 78,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+        },
+        "daysSupply": {
+          "value": 90,
+          "unit": "days",
+          "system": "http://unitsofmeasure.org",
+          "code": "d"
+        }
+      }
+    },
+	{
+      "resource": {
+        "resourceType": "MedicationDispense",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2016-07-06T12:48:01.000+00:00"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      Hydrochlorothiazide 50 MG Oral Tablet (rxnorm: 197770)\n    </div>"
+        },
+        "status": "in-progress",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "597745",
+              "display": "sorafenib 200 MG"
+            }
+          ],
+          "text": "sorafenib 200 MG"
+        },
+        "dosageInstruction": [
+          {
+            "text": "1 daily",
+            "doseQuantity": {
+              "value": 1,
+              "unit": "{tablet}",
+              "system": "http://unitsofmeasure.org",
+              "code": "{tablet}"
+            }
+          }
+        ],
+        "quantity": {
+          "value": 78,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+        },
+        "daysSupply": {
+          "value": 90,
+          "unit": "days",
+          "system": "http://unitsofmeasure.org",
+          "code": "d"
+        }
+      }
+    },
+	{
+      "resource": {
+        "resourceType": "MedicationDispense",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2016-07-06T12:48:01.000+00:00"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      Hydrochlorothiazide 50 MG Oral Tablet (rxnorm: 197770)\n    </div>"
+        },
+        "status": "in-progress",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "343399",
+              "display": "Quinidine bisulfate 300 mg"
+            }
+          ],
+          "text": "Quinidine bisulfate 300 mg"
+        },
+        "dosageInstruction": [
+          {
+            "text": "1 daily",
+            "doseQuantity": {
+              "value": 1,
+              "unit": "{tablet}",
+              "system": "http://unitsofmeasure.org",
+              "code": "{tablet}"
+            }
+          }
+        ],
+        "quantity": {
+          "value": 78,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+        },
+        "daysSupply": {
+          "value": 90,
+          "unit": "days",
+          "system": "http://unitsofmeasure.org",
+          "code": "d"
+        },
+        "id": "cf-1498599834052"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationDispense",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2016-07-06T12:48:01.000+00:00"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      Hydrochlorothiazide 50 MG Oral Tablet (rxnorm: 197770)\n    </div>"
+        },
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "197770",
+              "display": "Hydrochlorothiazide 50 MG Oral Tablet"
+            }
+          ],
+          "text": "Hydrochlorothiazide 50 MG Oral Tablet"
+        },
+        "dosageInstruction": [
+          {
+            "text": "1 daily",
+            "doseQuantity": {
+              "value": 1,
+              "unit": "{tablet}",
+              "system": "http://unitsofmeasure.org",
+              "code": "{tablet}"
+            }
+          }
+        ],
+        "quantity": {
+          "value": 78,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+        },
+        "daysSupply": {
+          "value": 90,
+          "unit": "days",
+          "system": "http://unitsofmeasure.org",
+          "code": "d"
+        },
+        "id": "cf-1498599834052"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationDispense",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2016-07-06T12:48:01.000+00:00"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      Lisinopril 20 MG Oral Tablet (rxnorm: 314077)\n    </div>"
+        },
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "314077",
+              "display": "Lisinopril 20 MG Oral Tablet"
+            }
+          ],
+          "text": "Lisinopril 20 MG Oral Tablet"
+        },
+        "dosageInstruction": [
+          {
+            "text": "1 daily",
+            "doseQuantity": {
+              "value": 1,
+              "unit": "{tablet}",
+              "system": "http://unitsofmeasure.org",
+              "code": "{tablet}"
+            }
+          }
+        ],
+        "quantity": {
+          "value": 78,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+        },
+        "daysSupply": {
+          "value": 90,
+          "unit": "days",
+          "system": "http://unitsofmeasure.org",
+          "code": "d"
+        },
+        "id": "cf-1498599834052"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationDispense",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2016-07-06T12:49:48.000+00:00"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      Dispensed 78 tablets = 90 day supply of Thyroxine 0.2 MG Oral Tablet [Levothroid]\n    </div>"
+        },
+        "status": "completed",
+        "authorizingPrescription": [
+          {
+            "reference": "MedicationOrder/SMART-MedicationOrder-165"
+          }
+        ],
+        "quantity": {
+          "value": 78,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+        },
+        "daysSupply": {
+          "value": 90,
+          "unit": "days",
+          "system": "http://unitsofmeasure.org",
+          "code": "d"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "206533",
+              "display": "Thyroxine 0.2 MG Oral Tablet [Levothroid]"
+            }
+          ],
+          "text": "Thyroxine 0.2 MG Oral Tablet [Levothroid]"
+        },
+        "whenHandedOver": "2009-07-09",
+        "id": "cf-1498599834052"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationDispense",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2016-07-06T12:48:01.000+00:00"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      donepezil 10 MG Oral Tablet [Aricept] (rxnorm: 153357)\n    </div>"
+        },
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "153357",
+              "display": "donepezil 10 MG Oral Tablet [Aricept]"
+            }
+          ],
+          "text": "donepezil 10 MG Oral Tablet [Aricept]"
+        },
+        "dosageInstruction": [
+          {
+            "text": "1 qhs",
+            "doseQuantity": {
+              "value": 1,
+              "unit": "{tablet}",
+              "system": "http://unitsofmeasure.org",
+              "code": "{tablet}"
+            }
+          }
+        ],
+        "quantity": {
+          "value": 78,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+        },
+        "daysSupply": {
+          "value": 90,
+          "unit": "days",
+          "system": "http://unitsofmeasure.org",
+          "code": "d"
+        },
+        "id": "cf-1498599834052"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationDispense",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2017-05-12T05:23:34.157-04:00"
+        },
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/ct",
+              "code": "91143003",
+              "display": "salbutamol 90 mcg/spray"
+            }
+          ],
+          "text": "salbutamol 90 mcg/spray"
+        },
+        "quantity": {
+          "value": 78,
+          "unit": "tablets",
+          "system": "http://unitsofmeasure.org",
+          "code": "{tablets}"
+        },
+        "daysSupply": {
+          "value": 90,
+          "unit": "days",
+          "system": "http://unitsofmeasure.org",
+          "code": "d"
+        },
+        "id": "cf-1498599834052"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-genetics-1",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsGene",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.genenames.org",
+                  "code": "11621",
+                  "display": "HNF1A"
+                }
+              ]
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsDNASequenceVariantName",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.loinc.org",
+                  "code": "47998-0",
+                  "display": "NM_000545.6:c.872dupC"
+                }
+              ]
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsDNAVariantId",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.loinc.org",
+                  "code": "81255-2",
+                  "display": "rs587776825"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://www.hl7.org/fhir/extension-observation-geneticsallelicstate.html",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.loinc.org",
+                  "code": "53034-5",
+                  "display": "Heterozygous"
+                }
+              ]
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/extension-observation-geneticsaminoacidchangename.html",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.loinc.org",
+                  "code": "48005-3",
+                  "display": "NM_000545.6:p.(Gly292Argfs)"
+                }
+              ]
+            }
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "51969-4",
+              "display": "Genetic analysis report"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example",
+          "display": "Molecular Lab Patient ID: HOSP-23456"
+        },
+        "issued": "2013-04-03T15:30:10+01:00",
+        "performer": [
+          {
+            "reference": "Practitioner/example",
+            "display": "Molecular Diagnostics Laboratory"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "10828004",
+              "display": "Positive"
+            }
+          ]
+        },
+        "specimen": {
+          "reference": "Specimen/genetics-example1-somatic",
+          "display": "Molecular Specimen ID: MLD45-Z4-1234"
+        },
+        "comment": "POOR METABOLIZER May be unable to effectively metabolize drug",
+        "related": [
+          {
+            "type": "derived-from",
+            "target": {
+              "reference": "HNF1A.pdf"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-genetics-1",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsGene",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.genenames.org",
+                  "code": "10593",
+                  "display": "SCN5A"
+                }
+              ]
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsDNASequenceVariantName",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.loinc.org",
+                  "code": "47998-0",
+                  "display": "NM_198056.2:c.5830C>T"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://www.hl7.org/fhir/extension-observation-geneticsallelicstate.html",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.loinc.org",
+                  "code": "53034-5",
+                  "display": "Heterozygous"
+                }
+              ]
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/extension-observation-geneticsaminoacidchangename.html",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.loinc.org",
+                  "code": "48005-3",
+                  "display": "NM_198056.2:p.Arg1944Ter"
+                }
+              ]
+            }
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "51969-4",
+              "display": "Genetic analysis report"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example",
+          "display": "Molecular Lab Patient ID: HOSP-23456"
+        },
+        "issued": "2013-04-03T15:30:10+01:00",
+        "performer": [
+          {
+            "reference": "Practitioner/example",
+            "display": "Molecular Diagnostics Laboratory"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "10828004",
+              "display": "Positive"
+            }
+          ]
+        },
+        "specimen": {
+          "reference": "Specimen/genetics-example1-somatic",
+          "display": "Molecular Specimen ID: MLD45-Z4-1234"
+        },
+        "comment": "Pathogenic variant in gene associated with Brugada Syndrome",
+        "related": [
+          {
+            "type": "derived-from",
+            "target": {
+              "reference": "SCN5A.pdf"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "000-12-871",
+        "active": true,
+        "name": [
+          {
+            "use": "official",
+            "family": "Chalmers",
+            "given": [
+              "Peter",
+              "James"
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "888-555-6473",
+            "use": "home",
+            "rank": 1
+          },
+          {
+            "system": "phone",
+            "value": "888-410-5613",
+            "use": "mobile",
+            "rank": 2
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1964-12-25",
+        "deceasedBoolean": false,
+        "address": [
+          {
+            "use": "home",
+            "type": "both",
+            "text": "534 Erewhon St PeasantVille, Rainbow, Vic  3999",
+            "line": [
+              "534 Erewhon St"
+            ],
+            "city": "PleasantVille",
+            "district": "Rainbow",
+            "state": "UT",
+            "postalCode": "34818",
+            "period": {
+              "start": "1974-12-25"
+            }
+          }
+        ],
+        "contact": [
+          {
+            "relationship": [
+              {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/v2/0131",
+                    "code": "N"
+                  }
+                ]
+              }
+            ],
+            "name": {
+              "family": "Marché",
+              "given": [
+                "Bénédicte"
+              ]
+            },
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "888-555-6873"
+              }
+            ],
+            "address": {
+              "use": "home",
+              "type": "both",
+              "line": [
+                "534 Erewhon St"
+              ],
+              "city": "PleasantVille",
+              "district": "Rainbow",
+              "state": "Vic",
+              "postalCode": "3999",
+              "period": {
+                "start": "1974-12-25"
+              }
+            },
+            "gender": "female",
+            "period": {
+              "start": "2012"
+            }
+          }
+        ],
+        "communication": [
+          {
+            "language": {
+              "coding": [
+                {
+                  "system": "urn:ietf:bcp:47",
+                  "code": "en-US",
+                  "display": "English"
+                }
+              ]
+            }
+          }
+        ],
+        "managingOrganization": {
+          "reference": "U of U Hospital"
+        }
+      }
+    }
+  ]
+}

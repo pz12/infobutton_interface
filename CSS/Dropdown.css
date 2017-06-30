@@ -1,0 +1,76 @@
+/* Wrapper for the entire dropdown menu and header */
+.dropdown-wrapper {
+  float: right;
+  margin-top: 23px;
+  margin-right: 20px;
+  width: 220px;
+  height: 20px;
+  border: 2px solid rgb(137, 136, 145);
+  border-radius: 3px;
+  padding: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(71, 70, 71);
+  font-family: lato;
+  background-color: white;
+  -webkit-transition: .15s; /* For Safari 3.1 to 6.0 */
+  transition: .15s;
+  cursor: pointer;
+}
+/* Produces the down arrow */
+.arrow-down {
+  display: inline-block;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgb(71, 70, 71);
+  margin-left: 90px;
+  margin-bottom: 1px;
+  margin-top: 12px;
+}
+/* The dropdown header will only hover when the mouse is over it, not when
+    it's over the menu items */
+#dd_header:hover{
+  background-color: rgb(245, 239, 239);
+  -webkit-transition: .2s; /* For Safari 3.1 to 6.0 */
+  transition: .2s;
+  border-radius: 2px;
+}
+#dd_header {
+  width: 227.5px;
+  margin: -4px 0px 0px -4px;
+  height: 28px;
+}
+/* Dropdown menu */
+.dropdown-wrapper .dropdown {
+  position: absolute;
+  width: 228px;
+  padding: 0px 0px 5px 0px;
+  margin: 0px 0px 0px -6px;
+  background: white;
+  border-radius: 0px 0px 3px 3px;
+  border: 2px solid rgb(137, 136, 145);
+  transition:  0.1s ease-in;
+  list-style: none;
+  opacity: 0;
+  pointer-events: none;
+}
+.dropdown-wrapper li a{
+  font: 14px lato;
+  font-weight: 600;
+  color: rgb(71, 70, 71);
+  border-bottom: 1px solid #bec0c2;
+  display:block;
+  padding: 8px 0px 10px 9px;
+}
+.dropdown-wrapper .dropdown li:last-of-type a {
+  border: none;
+  margin-bottom: -4px;
+}
+.dropdown-wrapper .dropdown li:hover a {
+  background-color: rgb(245, 239, 239);
+}
+.dropdown-wrapper.active .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 999999; /* Puts the menu above the profile picture */
+}
