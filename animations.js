@@ -157,6 +157,9 @@ $(document).ready(function() {
 
       //This loops across the list of resources in the patient "Bundle"
       for (var i=0; i<bundle.length;i++) {
+        //------------------//
+        //-- Demographics --//
+        //------------------//
         if(bundle[i].resource.resourceType==="Patient") { //This will give all of the demographics
           var contact_length = bundle[i].resource.telecom.length;
           for(var j=0;j<contact_length;j++) {  //loops over the contact means (i.e. telephone, email, etc.)
@@ -219,31 +222,37 @@ $(document).ready(function() {
             }
           }
         }
-
+        //------------------//
+        //-- Allergy List --//
+        //------------------//
         if(bundle[i].resource.resourceType === "AllergyIntolerance") {
           var item = bundle[i].resource.code.coding[0].display;
           var list_item = $("<li></li>").text(item);
-          lis.append(list_item);
-          allergy_list.push(i);
+          lis.append(list_item); //Adds each allergy to the "ul" list
+          allergy_list.push(i);  //captures the number of items in the list
         }
-
+        //----------------------//
+        //-- Appointment List --//
+        //----------------------//
         if(bundle[i].resource.resourceType === "Appointment") {
           var action = bundle[i].resource.description;
           var date = bundle[i].resource.start;
-          date = date.substring(0,10);
+          date = date.substring(0,10);  //Takes off time information and only leaves the date
           date = convertDate(date);
           var provider = bundle[i].resource.participant[1].actor.display;
           $("#to_do_table").append("<tr><td>"+action+"</td><td>"+date+"</td><td>"+provider+"</td></tr>");
-          todo_list.push(i);
+          todo_list.push(i);  //captures the number of items in the list
         }
-
+        //---------------------//
+        //-- Encounter Lists --//
+        //---------------------//
         if(bundle[i].resource.resourceType === "Encounter") {
           if(bundle[i].resource.class.display === "inpatient") {
-            inpatient.push(1);
-            var head =bundle[i];
+            inpatient.push(1); //captures the number of items in the list
+            var head = bundle[i]; //captures all of the inpatient encounter information to be extracted
             var date = head.resource.period.start;
             date = convertDate(date);
-            for(var j=0; j<head.resource.participant.length;j++) {
+            for(var j=0; j<head.resource.participant.length;j++) {  //Looks for the doctor name
               if(head.resource.participant[j].individual.reference==="Practitioner"){
                 var name = head.resource.participant[j].individual.display;
               }
@@ -251,13 +260,13 @@ $(document).ready(function() {
             $("#inpatient").append("<p style=\"margin-top:5px;\">"+date+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+name+"</span></br>");
           }
           else {
-            outpatient.push(1);
-            var head = bundle[i];
+            outpatient.push(1);  //captures the number of items in the list
+            var head = bundle[i]; //captures all of the outpatient encounter information to be extracted
             var date = head.resource.period.start;
             date = convertDate(date);
             for(var j=0; j<head.resource.participant.length;j++) {
               if (head.resource.serviceProvider) {
-                if(head.resource.participant[j].individual.reference==="Practitioner"){
+                if(head.resource.participant[j].individual.reference==="Practitioner"){  //Looks for the doctor name
                   var name = head.resource.serviceProvider.display+" - "+head.resource.participant[j].individual.display;
                 }
               }
@@ -268,14 +277,16 @@ $(document).ready(function() {
               $("#outpatient").append("<p style=\"margin-top:5px;\">"+date+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+name+"</p>");
           }
         }
-
+        //------------------//
+        //-- Problem List --//
+        //------------------//
         if(bundle[i].resource.resourceType === "Condition") {
           var display = bundle[i].resource.code.text;
-          var display_list = display.split(" ");
+          var display_list = display.split(" "); //Used for the infobutton search
           display = toTitleCase(display);
           var search_term = "";
-          var text = "";
-          for (var j=0;j<display_list.length;j++) {
+          var text = "";  //used to create the content in the list panel
+          for (var j=0;j<display_list.length;j++) {  //transforms the problem name to a searchable, url term
             if(j<display_list.length-1) {
               search_term += display_list[j]+"%20";
             }
@@ -284,8 +295,8 @@ $(document).ready(function() {
             }
           }
           var date = bundle[i].resource.onsetDateTime;
-          date = date.substring(0,10);
-          if(!date) {
+          date = date.substring(0,10);  //Trims the time and only keeps the date
+          if(!date) {  //Checks to see if the onsetDateTime exists
             date = "Unknown";
           }
           else {
@@ -293,7 +304,7 @@ $(document).ready(function() {
           }
 
           var note = bundle[i].resource.note;
-          if(bundle[i].resource.meta) {
+          if(bundle[i].resource.meta) {  //adds metadata when available
             var lastUpdated =  bundle[i].resource.meta.lastUpdated;
             lastUpdated = lastUpdated.substring(0,10);
             lastUpdated = convertDate(lastUpdated);
@@ -303,10 +314,12 @@ $(document).ready(function() {
             text +="<p><b>Notes: </b>"+note+"</p>";
           }
           var status = bundle[i].resource.clinicalStatus;
-          var code = bundle[i].resource.code.coding.code;
+          var code = bundle[i].resource.code.coding.code; //SNOMED code
+          // HTTP link the infobutoon opens
           var http = "http://service.oib.utah.edu:8080/infobutton-service/infoRequest?representedOrganization.id.root=1.3.6.1.4.1.5884"
             +"&taskContext.c.c=PROBLISTREV&mainSearchCriteria.v.c="+code+"&mainSearchCriteria.v.cs=2.16.840.1.113883.6.96&mainSearchCriteria.v.dn="+search_term
             +"&informationRecipient.languageCode.c=en&performer=PROV&xsltTransform=Infobutton_UI"
+          //create the list buttons with the correct content and format
           if(status==="active"||status=="recurrence") {
             if (!active_flagP) {
               $("#active-p").append("<div class=\"accordion\" style=\"margin-top:-5px;\">" +display
@@ -333,23 +346,26 @@ $(document).ready(function() {
           }
         }
 
+        //---------------------//
+        //-- Medication List --//
+        //---------------------//
         var resourceName = bundle[i].resource.resourceType;
-        if($.inArray(resourceName, medArr)!== -1) {  //will catch both medication orders and dispensed
+        if($.inArray(resourceName, medArr)!== -1) {    //Will catch any of the possible medication resource types
           var display = bundle[i].resource.medicationCodeableConcept.text;
           var status = bundle[i].resource.status;
           var search_term= display.match(/(\w+\s?\D*)/); //Giving what we want, but twice
-          if (search_term[0].slice(-1)===" "){
-              search_term = search_term[0].slice(0,-1); //take off space at the end
+          if (search_term[0].slice(-1)===" "){  //transforms the problem name to a searchable, url term
+              search_term = search_term[0].slice(0,-1); //take off space at the end if needed
           }
           else {
             search_term = search_term[0];
           }
           display = toTitleCase(display);
-          var text = "";
+          var text = "";  //used to create the content in the list panel
           var display_list = search_term.split(" ");
           if(display_list.length>1) {  //will make the medication name searchable
             search_term = "";
-            for (var j=0;j<display_list.length;j++) {
+            for (var j=0;j<display_list.length;j++) {  //transforms the problem name to a searchable, url term
               if(j<display_list.length-1) {
                 search_term += display_list[j]+"%20";
               }
@@ -370,7 +386,7 @@ $(document).ready(function() {
           }
 
           var note = bundle[i].resource.note;
-          if(bundle[i].resource.meta) {
+          if(bundle[i].resource.meta) {  //Add metadata if exists
             var lastUpdated =  bundle[i].resource.meta.lastUpdated;
             lastUpdated = lastUpdated.substring(0,10);
             lastUpdated = convertDate(lastUpdated);
@@ -379,10 +395,12 @@ $(document).ready(function() {
           if(note) {
             text +="<p><b>Notes: </b>"+note+"</p>";
           }
-          var rxnorm_code = bundle[i].resource.medicationCodeableConcept.coding[0].code;
+          var rxnorm_code = bundle[i].resource.medicationCodeableConcept.coding[0].code; //RxNorm code
+          // HTTP link the infobutoon opens
           var http = "http://service.oib.utah.edu:8080/infobutton-service/infoRequest?representedOrganization.id.root=1.3.6.1.4.1.5884"
             +"&taskContext.c.c=MLREV&mainSearchCriteria.v.c="+rxnorm_code+"&mainSearchCriteria.v.cs=2.16.840.1.113883.6.88&mainSearchCriteria.v.dn="+search_term
             +"&informationRecipient.languageCode.c=en&informationRecipient=PROV&performer=PROV&xsltTransform=Infobutton_UI"
+          //create the list buttons with the correct content and format
           if(status==="in-progress"||status==="active") {
             if (!active_flagM) {
               $("#active-m").append("<div class=\"accordion\" style=\"margin-top:-5px;\">" +display
@@ -408,7 +426,9 @@ $(document).ready(function() {
             $("#inactive-m").append("<div class=\"panel\"><p>"+text+"</p></div>");
           }
         }
-
+        //--------------------------//
+        //-- Genetic Reports List --//
+        //--------------------------//
         if (bundle[i].resource.resourceType==="Observation") {
           var pdf = bundle[i].resource.related[0].target.reference;
           pdf = "gene_reports/"+pdf;
@@ -418,13 +438,12 @@ $(document).ready(function() {
           //Initialize variables in case they don't exist in file
           var gene = variant = aa_change = zygosity = ".......";
           var snp_label = snp = "";
-          for (var j=0;j<gene_list.length;j++) {
+          for (var j=0;j<gene_list.length;j++) {  //Loops through the extension list in the Observation
             if (gene_list[j].url.indexOf("geneticsGene") !== -1) {
               gene = gene_list[j].valueCodeableConcept.coding[0].display;
             }
             if(gene_list[j].url.indexOf("SequenceVariantName") !== -1) {
               variant = gene_list[j].valueCodeableConcept.coding[0].display;
-
               var variant_url;
               if (variant.indexOf(">") !== -1) {
                 //Need to replace '>' because it's an invalid url character
@@ -434,12 +453,12 @@ $(document).ready(function() {
                 variant_url = variant;
               }
               variant = variant.split(":");
-              variant = variant[1];
+              variant = variant[1]; //Take only the variant section of the full variant name
             }
             if(gene_list[j].url.indexOf("aminoacidchangename") !== -1) {
               aa_change = gene_list[j].valueCodeableConcept.coding[0].display;
               aa_change = aa_change.split(":");
-              aa_change = aa_change[1];
+              aa_change = aa_change[1];  //Take only the amino acid change section of the full variant name
             }
             if(gene_list[j].url.indexOf("allelicstate") !== -1) {
               zygosity = gene_list[j].valueCodeableConcept.coding[0].display;
@@ -447,18 +466,15 @@ $(document).ready(function() {
 
             if(gene_list[j].url.indexOf("DNAVariantId") !== -1) {
               snp = gene_list[j].valueCodeableConcept.coding[0].display;
-              snp_label = "SNP: ";
-
+              snp_label = "SNP: ";  //Only adds the SNP section in the panel if it exists
             }
-
-
           }
-
+          //Infobutton urls
           var httpG = "http://service.oib.utah.edu:8080/infobutton-service/infoRequest?representedOrganization.id.root=ClinicalGenome.org"
             +"&taskContext.c.c=LABRREV&mainSearchCriteria.v.dn="+gene+"&performer=PROV";
           var httpV = "http://service.oib.utah.edu:8080/infobutton-service/infoRequest?representedOrganization.id.root=ClinicalGenome.org&"
             +"taskContext.c.c=LABRREV&mainSearchCriteria.v.dn="+variant_url+"&performer=PROV";
-
+          //Add the genetic observation list items with the appropriate format
           if(gene_count===1) {
             $("#gene_list").append("<div class=\"accordion\" style=\"margin-top:15px;\">"+gene
               +" <a class=\"infob\" href="+httpG+" target=\"_blank\"><img class=\"infobutton\" src=\"images/infobutton_icon.png\"/></a>"
@@ -476,13 +492,9 @@ $(document).ready(function() {
             +" target=\"_blank\"> Click here</a> for full report</p></div>");
         }
       }
+      //Add click function to each list item so that the panel will open when clicked
       for (var i = 0; i < acc.length; i++) {
-
         acc[i].onclick = function(e,i) {
-
-          var panels = document.getElementsByClassName("panel");
-          var pan;
-
           var panel = this.nextElementSibling;
           if (panel.style.maxHeight){
             panel.style.maxHeight = null;
@@ -508,17 +520,19 @@ $(document).ready(function() {
           }
         }
       }
+
       $(".infobutton").click(function(e) {
         //list item will not be opened when the infobutton is clicked
         e.stopPropagation();
       });
+      //Makes it so the margins will change dynamically according to the number of
+      //  items in the neighboring lists
       if(inpatient.length>outpatient.length) {
         var diff = inpatient.length-outpatient.length;
         var marg_length = diff*24;
         var marg_dist = document.querySelector("#admissions");
         marg_dist.style.marginBottom = marg_length+"px";
       }
-
       var allergy_list_len = allergy_list.length;
       var todo_list_len = todo_list.length;
       if (allergy_list_len>todo_list_len+1) {
@@ -546,6 +560,7 @@ $(document).ready(function() {
         marg_dist.style.marginBottom = "-5px";
       }
 
+      // Adds a blank line if any of the lists are empty
       if(!active_flagP) {
           $("#active-p").append("<div class=\"empty-list\"></div>");
       }
@@ -561,9 +576,7 @@ $(document).ready(function() {
         $("#inactive-m").append("<div class=\"empty-list\"></div>");
         inactive_flagM = true;
       }
+      
     });
-
   };
-
-
 });
